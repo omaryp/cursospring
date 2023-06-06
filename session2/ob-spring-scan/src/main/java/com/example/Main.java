@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -15,7 +15,7 @@ public class Main {
 
         //Cargar un bean dentro de otro bean
         GestorFacturas gestor = (GestorFacturas)context.getBean("gestorFacturas");
-        System.out.println(gestor.nombre);
+        
         System.out.println(gestor.calculatorService.holaMundo());
     }
 }
