@@ -19,3 +19,15 @@ y luego colocamos <context:component-scan base-package="com.example"/> para que 
 Además se debe colocar la anotacion @Component para que spring pueda identificar los beans a crear.
 
 Es recomendable usar la inyección de depencias por constructor.
+
+# SpringData
+
+Acceso a datos 
+    *JPA
+        *hibernate
+            *JBDC
+
+La entidad se le coloca la anotación @Entity
+A la clave primaria se le coloca la anotación @Id además de definirla como autoincrementable con 
+@GenerateValue(strategy=GenerationType.IDENTITY)
+Luego se crea una interface que extienda de  JPAReposotory pasandole la clase que se persistirá y tipo de dato del id.
