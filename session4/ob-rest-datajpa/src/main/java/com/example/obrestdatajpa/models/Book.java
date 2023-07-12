@@ -2,23 +2,29 @@ package com.example.obrestdatajpa.models;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 @Table(name = "books")
+@ApiModel("Clase Book para representar un libro.")
 public class Book {
     
     //atributos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiModelProperty("Clave ficticia autoincremental tipo long")
     private Long id;
     private String title;
     private String autor;
     private Integer pages;
+    @ApiModelProperty("Precio en dólares, con dos decimales utilizando punto(.) como separador")
     private Double price;
     private LocalDate releasDate;
     private Boolean online;

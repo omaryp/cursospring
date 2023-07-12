@@ -20,6 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.obrestdatajpa.models.Book;
 import com.example.obrestdatajpa.repositorys.BookRepository;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import springfox.documentation.annotations.ApiIgnore;
+
 @RestController
 @RequestMapping("/api/books")
 public class BookController {
@@ -38,11 +42,12 @@ public class BookController {
     }
 
     @GetMapping("/{id}")
+    @ApiOperation("Buscar un libro por clave primaria , id long")
     /*public Book getBook(@PathVariable Long id){
         Optional<Book> optBook = bookRepository.findById(id);
         return optBook.orElse(null);
     }*/
-    public ResponseEntity<Book> getBook(@PathVariable Long id){
+    public ResponseEntity<Book> getBook(@ApiParam("Clave primaria tipo long") @PathVariable Long id){
         Optional<Book> optBook = bookRepository.findById(id);
         return optBook.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -69,12 +74,20 @@ public class BookController {
     }
 
     @DeleteMapping("/{id}")
+    @ApiIgnore
     public ResponseEntity<Book> deleteBook(@PathVariable Long id){
         if(!bookRepository.existsById(id)){
             log.warn("Libro no existe");
             return ResponseEntity.notFound().build();
         }
         bookRepository.deleteById(id);
+        return ResponseEntity.noContent().build(); // no content indica que el elemento se ha eliminado
+    }
+
+    @DeleteMapping("")
+    @ApiIgnore
+    public ResponseEntity<Book> deleteBooks(){
+        bookRepository.deleteAll();
         return ResponseEntity.noContent().build(); // no content indica que el elemento se ha eliminado
     }
 

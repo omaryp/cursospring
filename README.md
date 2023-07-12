@@ -79,4 +79,19 @@ recibe la solicitud.
 ### @RequestHeader
 Permite obtner las cabeceras de la petición
 
+### @Configuration
+Se agrega a las clases que son de configuración, por ejemplo cuando se está configurando swagger
 
+### @Bean
+No indica que el bean a crear va a estar disponible en el contenedor de beans
+
+## Swagger
+
+### @ApiIgnore
+    no muestra un recurso en la documentación.
+
+### @ApiParam 
+    muestra una descripción en un parámetro de un recurso
+
+### @ApiOperation
+    muestra una descripción en el recurso

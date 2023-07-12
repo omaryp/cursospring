@@ -19,3 +19,5 @@ Aplicación orientada a una biblioteca
 2. BookRepository
     el @Repository en algunos casos es opcional
 3. BookController
+
+Para el caso de swagger2 escompatible con versiones anteriores a la 3 de spring boot y además se debe tener en cuenta que se usa antes de la version 3 el paquete javax para posteriores es jakarta
