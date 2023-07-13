@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "f46ea555-3cbe-424f-a37e-25bd9bcee117",
+		"name": "Open-BootCamp examen456",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "all laptops",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/books",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hola",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/saludar",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"saludar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save laptop",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"marca\": \"Dell\",\r\n        \"modelo\": \"inspirde DC512\",\r\n        \"procesador\": \"I5 13 generacion\",\r\n        \"ram\": \"16 GB\",\r\n        \"discoDuro\": \"SSD 256 GB\",\r\n        \"tieneTarjetaVideo\": false\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/laptops",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"laptops"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080",
+			"type": "default"
+		}
+	]
+}

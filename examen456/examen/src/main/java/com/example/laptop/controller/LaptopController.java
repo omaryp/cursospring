@@ -1,4 +1,4 @@
-package com.example.examen.controller;
+package com.example.laptop.controller;
 
 
 import java.util.List;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.examen.model.Laptop;
-import com.example.examen.repository.LaptopRepository;
+import com.example.laptop.model.Laptop;
+import com.example.laptop.repository.LaptopRepository;
 
 @RestController
 @RequestMapping("/api/laptops")
