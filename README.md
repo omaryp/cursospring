@@ -88,10 +88,26 @@ No indica que el bean a crear va a estar disponible en el contenedor de beans
 ## Swagger
 
 ### @ApiIgnore
-    no muestra un recurso en la documentación.
+no muestra un recurso en la documentación.
 
 ### @ApiParam 
-    muestra una descripción en un parámetro de un recurso
+muestra una descripción en un parámetro de un recurso
 
 ### @ApiOperation
-    muestra una descripción en el recurso
+muestra una descripción en el recurso
+
+## Test con Spring
+
+### @SpringBootTest
+Anotación para indicar que se esta trabajando test en SpringBoot.
+
+### @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+Con WebEnvironment.RANDOM_PORT se indica que el puerto a utilixar en el test es aleatorio.
+
+### @Test
+Anotación para indicar a un método que es un test.
+
+### @BeforeEach
+Anotación para indicar el método que se debe ejecutar antes de cada test.
+
+Para el caso de testear RestControllers se debe utilicar un objeto TestRestTemplate y RestTemplateBuilder, además con la anotación @LocalServerPort indicamos que se debe cargar un puerto.
